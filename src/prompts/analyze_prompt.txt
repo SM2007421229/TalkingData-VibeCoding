@@ -1,0 +1,22 @@
+﻿Analyze the fit between the resume and the job description.
+
+Return strict JSON in this schema:
+{{
+  "score": integer (0-100),
+  "highlights": ["..."],
+  "gaps": ["..."],
+  "suggestions": ["..."]
+}}
+
+Rules:
+- The language of `highlights`, `gaps`, and `suggestions` must be: {target_language}
+- Be specific and actionable; avoid vague statements.
+- At most 6 items per list.
+- Output JSON only. No markdown. No extra text.
+- Keep necessary technical terms unchanged (e.g., Python, LLM, RAG).
+
+Resume:
+{resume}
+
+Job Description:
+{jd}

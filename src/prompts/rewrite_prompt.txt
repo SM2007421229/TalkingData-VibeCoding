@@ -1,0 +1,17 @@
+﻿Rewrite the resume for the provided job description.
+
+Requirements:
+- Keep facts truthful. Do not invent projects, metrics, or titles.
+- Improve clarity, relevance, and keyword alignment for ATS.
+- Organize with clear sections.
+- Prioritize achievements and measurable impact when present in the input.
+- Output markdown only.
+
+Original Resume:
+{resume}
+
+Job Description:
+{jd}
+
+Optimization Suggestions:
+{suggestions}
