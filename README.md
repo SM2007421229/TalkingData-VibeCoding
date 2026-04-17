@@ -72,27 +72,34 @@ streamlit run app.py
 
 ## Docker 运行
 
-### 1）构建镜像
+### 推荐：一条命令构建并启动（面试官使用）
+
+先准备 `.env`（仅首次需要）：
+
+```bash
+cp .env.example .env
+# Windows PowerShell: Copy-Item .env.example .env
+# 编辑 .env，填入 DEEPSEEK_API_KEY
+```
+
+然后直接执行：
+
+```bash
+docker compose up -d --build
+```
+
+访问地址：`http://localhost:8501`
+
+## 传统两步命令（可选）
 
 ```bash
 docker build -t resume-optimizer-agent .
+docker run -d --name resume-optimizer-agent --rm -p 8501:8501 --env-file .env resume-optimizer-agent
 ```
 
-### 2）启动容器
-
-```bash
-docker run --rm -p 8501:8501 --env-file .env resume-optimizer-agent
-```
-
-访问地址：`http://localhost:8501`
-
-## Docker Compose 运行
-
-```bash
-docker compose up --build
-```
-
-访问地址：`http://localhost:8501`
+说明：
+- `docker build` 仅构建镜像，不涉及前台/后台。
+- 查看日志：`docker compose logs -f` 或 `docker logs -f resume-optimizer-agent`
 
 ## 使用步骤
 
